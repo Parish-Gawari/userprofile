@@ -1,13 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import Profiles from "../components/Profiles/Profiles";
+import AddUser from "../components/AddUser/AddUser";
 
 const Home = () => {
   return (
-    <>
-      <h1>User Profiles</h1>
-      <Profiles />
-    </>
+    <center>
+      {/* <h1>User Profiles</h1>
+      <Profiles /> */}
+      <AddUser />
+    </center>
   );
 };
 

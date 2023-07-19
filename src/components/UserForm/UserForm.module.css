@@ -1,0 +1,23 @@
+.formContainer {
+    border: 2px solid #ddd;
+    margin: 20px;
+    padding: 20px;
+}
+
+.field {
+    margin: 10px;
+}
+
+.inputField {
+    margin-left: 10px;
+}
+
+.successText {
+    color: green;
+    font-weight: 700;
+}
+
+.errorText {
+    color: red;
+    font-weight: 700;
+}
