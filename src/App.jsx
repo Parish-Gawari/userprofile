@@ -1,14 +1,12 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import AppHeader from "./components/AppHeader/AppHeader";
-import Home from "./pages/Home";
+import PageRoute from "./routes/PageRoute";
 
 function App() {
   return (
     <>
-      <AppHeader />
       <main>
-        <Home />
+        <PageRoute />
       </main>
     </>
   );
