@@ -1,14 +1,23 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import UserCard from "../UserCard/UserCard";
 import styles from "./Profiles.module.css";
 import { deleteUser, getdata } from "../../service/getdata";
 import Loader from "../Loader/Loader";
-const Profiles = () => {
+import { useNavigate } from "react-router-dom";
+import route from "./../../routes/routes.json";
+
+const Profiles = ({ page = "1" }) => {
+  const navigate = useNavigate();
   const [users, setUsers] = useState([]);
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  const navigationHandler = () => {
+    navigate(page === "1" ? `/${route.PROFILES}/2` : `/${route.PROFILES}/1`);
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -59,19 +68,16 @@ const Profiles = () => {
               <p style={{ color: "red", fontWeight: "800" }}>
                 Something went wrong,Please try again later...
               </p>
-              <button onClick={() => setPage(page === 1 ? 2 : 1)}>
-                Show Page {page === 1 ? 2 : 1}
-              </button>
             </>
           )}
           {!isError && (
             <>
               <div className={styles.profilesContainer}>{userCards}</div>
-              <button onClick={() => setPage(page === 1 ? 2 : 1)}>
-                Show Page {page === 1 ? 2 : 1}
-              </button>
             </>
           )}
+          <button onClick={navigationHandler}>
+            Show Page {page === "1" ? "2" : "1"}
+          </button>
         </>
       )}
     </>
