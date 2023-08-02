@@ -7,6 +7,7 @@ import { deleteUser, getdata } from "../../service/getdata";
 import Loader from "../Loader/Loader";
 import { useNavigate } from "react-router-dom";
 import route from "./../../routes/routes.json";
+import { PropTypes } from "prop-types";
 
 const Profiles = ({ page = "1" }) => {
   const navigate = useNavigate();
@@ -82,6 +83,10 @@ const Profiles = ({ page = "1" }) => {
       )}
     </>
   );
+};
+
+Profiles.propTypes = {
+  page: PropTypes.string,
 };
 
 export default Profiles;

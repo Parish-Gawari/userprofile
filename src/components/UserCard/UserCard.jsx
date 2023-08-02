@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import styles from "./UserCard.module.css";
+import { PropTypes } from "prop-types";
 
 const UserCard = ({ fname, email, image, userIndex, deleteUserHandler }) => {
   return (
@@ -16,6 +17,14 @@ const UserCard = ({ fname, email, image, userIndex, deleteUserHandler }) => {
       </div>
     </div>
   );
+};
+
+UserCard.propTypes = {
+  fname: PropTypes.string,
+  image: PropTypes.string,
+  email: PropTypes.string,
+  userIndex: PropTypes.number.isRequired,
+  deleteUserHandler: PropTypes.func.isRequired,
 };
 
 export default UserCard;
