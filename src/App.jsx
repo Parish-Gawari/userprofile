@@ -1,12 +1,15 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PageRoute from "./routes/PageRoute";
+import ThemeProvider from "./contexts/ThemeContext";
 
 function App() {
   return (
     <>
       <main>
-        <PageRoute />
+        <ThemeProvider>
+          <PageRoute />
+        </ThemeProvider>
       </main>
     </>
   );
